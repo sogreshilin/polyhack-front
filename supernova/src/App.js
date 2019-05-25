@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Extractor from './containers/Extractor/Extractor';
 import Description from './containers/Description/Description';
+import Upload from './containers/Upload/Upload';
 
 function App() {
     return (
@@ -17,6 +18,9 @@ function App() {
                     <Route 
                         path='/description'
                         component={Description} />
+                    <Route 
+                        path='/upload'
+                        component={Upload} />
                 </Switch>
             </BrowserRouter>
         </div>

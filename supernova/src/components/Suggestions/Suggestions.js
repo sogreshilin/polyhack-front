@@ -13,6 +13,7 @@ const Suggestions = (props) => {
     const suggestions = props.videos.map(elem => {
             return (
                 <SuggestionItem 
+                    key={elem.id}
                     autoplay={elem.autoplay}
                     videoId={elem.id}
                     start={elem.start}
