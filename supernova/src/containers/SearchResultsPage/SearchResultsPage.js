@@ -5,6 +5,7 @@ import SuggestionItem from "../../components/Suggestions/SuggestionItem/Suggesti
 
 import styles from './SearchResultsPage.css';
 import Form from "../../components/Form/Form";
+import SearchForm from "../SearchForm/SearchForm";
 
 class SearchResultsPage extends React.Component {
     render() {
@@ -21,15 +22,7 @@ class SearchResultsPage extends React.Component {
 
         return (
             <div>
-                <div className={styles.formWrapper}>
-                <Form
-                    title='Find videos related to typed phrase'
-                    placeholder='Enter phrase'
-                    onChange={this.onInputChangeHandler}
-                    onSubmit={this.onSubmitFormHandler}
-                    btnText='Find'
-                />
-                </div>
+                <SearchForm/>
                 {
                     this.props.isLoading
                         ? <div className={styles.spinnerWrapper}>
