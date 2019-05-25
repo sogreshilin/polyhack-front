@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import styles from './Extractor.css';
+import styles from './MainPage.css';
 
 import * as actions from '../../store/actions/index';
 import Form from "../../components/Form/Form";
 
-class Extractor extends Component {
+class MainPage extends Component {
     state = {
         inputValue: '',
     }
@@ -58,4 +58,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Extractor);
+export default connect(mapStateToProps, mapDispatchToProps)(MainPage);

@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import MainPage from './containers/Extractor/Extractor';
-import VideoPage from './containers/Description/Description';
-import UploadVideoPage from './containers/Upload/Upload';
-import SearchResultsPage from "./containers/Suggestions/Suggestions";
+import MainPage from './containers/MainPage/MainPage';
+import VideoPage from './containers/VideoPage/VideoPage';
+import UploadVideoPage from './containers/UploadVideoPage/UploadVideoPage';
+import SearchResultsPage from "./containers/SearchResultsPage/SearchResultsPage";
 
 function App() {
     return (

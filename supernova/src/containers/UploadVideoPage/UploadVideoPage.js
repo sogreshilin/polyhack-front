@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 import Form from '../../components/Form/Form';
 
-import styles from './Upload.css';
+import styles from './UploadVideoPage.css';
 
-class Upload extends Component {
+class UploadVideoPage extends Component {
     state = {
         link: '',
         isValid: false,
@@ -35,4 +35,4 @@ class Upload extends Component {
     }
 }
 
-export default Upload;
+export default UploadVideoPage;

@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import SuggestionItem from "../../components/Suggestions/SuggestionItem/SuggestionItem";
 
-import styles from './Suggestions.css';
+import styles from './SearchResultsPage.css';
 import Form from "../../components/Form/Form";
 
-class Suggestions extends React.Component {
+class SearchResultsPage extends React.Component {
     render() {
         const suggestions = this.props.videos.map(elem => {
                 return (
@@ -49,5 +49,5 @@ const mapStateToProps = (state) => ({
     videos: state.extractor.suggestedVideos,
 });
 
-export default connect(mapStateToProps)(Suggestions);
+export default connect(mapStateToProps)(SearchResultsPage);
 
