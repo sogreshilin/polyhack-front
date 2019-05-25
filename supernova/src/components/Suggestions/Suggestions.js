@@ -10,12 +10,20 @@ const Suggestions = (props) => {
         );
     }
 
+    const suggestions = props.videos.map(elem => {
+            return (
+                <SuggestionItem 
+                    autoplay={elem.autoplay}
+                    videoId={elem.id}
+                    start={elem.start}
+                    description={elem.dscr}/>);
+        }
+    );
+
     return (
         <div>
             <ul>
-                <SuggestionItem>Видео 1</SuggestionItem>
-                <SuggestionItem>Видео 2</SuggestionItem>
-                <SuggestionItem>Видео 3</SuggestionItem>
+                {suggestions}
             </ul>
         </div>
     )

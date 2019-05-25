@@ -8,13 +8,13 @@ const SuggestionItem = (props) => {
         <li className={styles.SuggestionItem}>
             <div className={styles.VideoPlayer}>
                 <VideoPlayer 
-                    isAutoplay={false}
-                    videoId='uD4izuDMUQA'
-                    start={40}
+                    isAutoplay={props.autoplay}
+                    videoId={props.videoId}
+                    start={props.start}
                 />
             </div>
             <div className={styles.Description}>
-                weoiwfnjkweifhoyweihfelwkfipoefiweklfjhdxsi8fowefbsjd
+                {props.description}
             </div>
         </li>
     )

@@ -29,7 +29,6 @@ class Extractor extends Component {
         console.log(phrase);
         this.props.onSubmitForm(phrase)
     }
-    
 
     render() {
         return (
@@ -39,7 +38,8 @@ class Extractor extends Component {
                     onSubmitHandler={this.submitFormHandler}
                     onChange={this.onInputChangeHandler} />
                 <Suggestions 
-                    isLoading={this.props.isLoading} />
+                    isLoading={this.props.isLoading}
+                    videos={this.props.suggestedVideos} />
             </div>
         )
     }
@@ -48,6 +48,7 @@ class Extractor extends Component {
 const mapStateToProps = (state) => ({
     phrase: state.extractor.phrase,
     isLoading: state.extractor.isLoading,
+    suggestedVideos: state.extractor.suggestedVideos,
 })
 
 const mapDispatchToProps = (dispatch) => ({
