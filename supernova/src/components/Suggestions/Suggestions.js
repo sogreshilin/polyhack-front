@@ -1,8 +1,15 @@
 import React from 'react';
+import Spinner from '../UI/Spinner/Spinner'
 
 import SuggestionItem from './SuggestionItem/SuggestionItem';
 
-const Suggestions = () => {
+const Suggestions = (props) => {
+    if (props.isLoading) {
+        return (
+            <Spinner />
+        );
+    }
+
     return (
         <div>
             <ul>

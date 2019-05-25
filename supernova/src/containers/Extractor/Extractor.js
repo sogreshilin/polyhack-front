@@ -38,7 +38,8 @@ class Extractor extends Component {
                 <Heading 
                     onSubmitHandler={this.submitFormHandler}
                     onChange={this.onInputChangeHandler} />
-                <Suggestions />
+                <Suggestions 
+                    isLoading={this.props.isLoading} />
             </div>
         )
     }
@@ -46,6 +47,7 @@ class Extractor extends Component {
 
 const mapStateToProps = (state) => ({
     phrase: state.extractor.phrase,
+    isLoading: state.extractor.isLoading,
 })
 
 const mapDispatchToProps = (dispatch) => ({
