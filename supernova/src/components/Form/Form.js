@@ -5,14 +5,14 @@ import Button from "../Button/Button";
 import TextField from "../TextField/TextField";
 import Title from "../Title/Title";
 
-const Form = (props) => {
+const Form = ({ title, placeholder, btnText, onChange, onSubmit }) => {
     return (
         <div>
-            <form className={styles.Form} onSubmit={props.onSubmit}>
-                <Title text={props.title}/>
+            <form className={styles.Form} onSubmit={onSubmit}>
+                <Title text={title}/>
                 <div className={styles.Wrapper}>
-                    <TextField onChange={props.onChange} placeholder={props.placeholder}/>
-                    <Button text={props.btnText}/>
+                    <TextField onChange={onChange} placeholder={placeholder}/>
+                    <Button text={btnText}/>
                 </div>
             </form>
         </div>

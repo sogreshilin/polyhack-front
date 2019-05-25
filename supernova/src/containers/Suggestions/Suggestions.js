@@ -4,17 +4,10 @@ import Spinner from "../../components/UI/Spinner/Spinner";
 import SuggestionItem from "../../components/Suggestions/SuggestionItem/SuggestionItem";
 
 import styles from './Suggestions.css';
+import Form from "../../components/Form/Form";
 
 class Suggestions extends React.Component {
     render() {
-        if (this.props.isLoading) {
-            return (
-                <div className={styles.spinnerWrapper}>
-                    <Spinner/>
-                </div>
-            );
-        }
-
         const suggestions = this.props.videos.map(elem => {
                 return (
                     <SuggestionItem
@@ -28,9 +21,24 @@ class Suggestions extends React.Component {
 
         return (
             <div>
-                <ul>
-                    {suggestions}
-                </ul>
+                <div className={styles.formWrapper}>
+                <Form
+                    title='Find videos related to typed phrase'
+                    placeholder='Enter phrase'
+                    onChange={this.onInputChangeHandler}
+                    onSubmit={this.onSubmitFormHandler}
+                    btnText='Find'
+                />
+                </div>
+                {
+                    this.props.isLoading
+                        ? <div className={styles.spinnerWrapper}>
+                            <Spinner/>
+                        </div>
+                        : <ul>
+                            {suggestions}
+                        </ul>
+                }
             </div>
         );
     }

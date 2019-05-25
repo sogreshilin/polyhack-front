@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Heading from '../../components/Heading/Heading';
-
 import styles from './Extractor.css';
 
 import * as actions from '../../store/actions/index';
+import Form from "../../components/Form/Form";
 
 class Extractor extends Component {
     state = {
@@ -35,9 +34,13 @@ class Extractor extends Component {
         return (
             <div>
                 <div className={styles.Extractor}>
-                    <Heading
-                        onSubmitHandler={this.submitFormHandler}
-                        onChange={this.onInputChangeHandler}/>
+                    <Form
+                        title='Find videos related to typed phrase'
+                        placeholder='Enter phrase'
+                        onChange={this.onInputChangeHandler}
+                        onSubmit={this.submitFormHandler}
+                        btnText='Find'
+                    />
                 </div>
             </div>
         )
