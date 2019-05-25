@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import Heading from '../../components/Heading/Heading';
 import Suggestions from '../../components/Suggestions/Suggestions';
 
+import styles from './Extractor.css';
+
 import * as actions from '../../store/actions/index';
 
 class Extractor extends Component {
@@ -32,14 +34,13 @@ class Extractor extends Component {
 
     render() {
         return (
-            <div>
-                <h2>Extractor page</h2>
+            <div className={styles.Extractor}>
                 <Heading 
                     onSubmitHandler={this.submitFormHandler}
                     onChange={this.onInputChangeHandler} />
-                <Suggestions 
+                {/* <Suggestions 
                     isLoading={this.props.isLoading}
-                    videos={this.props.suggestedVideos} />
+                    videos={this.props.suggestedVideos} /> */}
             </div>
         )
     }

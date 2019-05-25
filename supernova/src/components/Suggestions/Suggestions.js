@@ -27,7 +27,7 @@ const Suggestions = (props) => {
                 {suggestions}
             </ul>
         </div>
-    )
+    );
 }
 
 export default Suggestions;

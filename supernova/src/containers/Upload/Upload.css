@@ -11,14 +11,3 @@
     width: 100%;
     text-align: center;
 }
-
-.Upload input {
-    margin: 30px auto;
-    display: block;
-    width: 60%;
-    height: 20px;
-
-    padding: 7px 10px;
-
-    border: 1px solid black;
-}

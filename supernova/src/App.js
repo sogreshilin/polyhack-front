@@ -8,7 +8,6 @@ import Upload from './containers/Upload/Upload';
 function App() {
     return (
         <div>
-            <h1>Supernova</h1>
             <BrowserRouter>
                 <Switch>
                     <Route 
