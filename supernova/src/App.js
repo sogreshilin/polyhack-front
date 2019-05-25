@@ -1,25 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Extractor from './containers/Extractor/Extractor';
-import Description from './containers/Description/Description';
-import Upload from './containers/Upload/Upload';
+import MainPage from './containers/Extractor/Extractor';
+import VideoPage from './containers/Description/Description';
+import UploadVideoPage from './containers/Upload/Upload';
+import SearchResultsPage from "./containers/Suggestions/Suggestions";
 
 function App() {
     return (
         <div>
             <BrowserRouter>
                 <Switch>
-                    <Route 
-                        exact
-                        path='/'
-                        component={Extractor} />
-                    <Route 
-                        path='/description'
-                        component={Description} />
-                    <Route 
-                        path='/upload'
-                        component={Upload} />
+                    <Route path='/' exact component={MainPage}/>
+                    <Route path='/upload' component={UploadVideoPage}/>
+                    <Route path='/suggestions' component={SearchResultsPage}/>
+                    <Route path='/video' component={VideoPage}/>
                 </Switch>
             </BrowserRouter>
         </div>

@@ -42,7 +42,6 @@ const suggestVideoFail = (state, action) => {
 }
 
 const initSuggestVideos = (state, action) => {
-    console.log(action);
     return updateObject(state, {
         phrase: action.phrase,
         isLoading: true,

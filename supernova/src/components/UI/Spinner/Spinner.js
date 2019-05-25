@@ -4,8 +4,17 @@ import styles from './Spinner.css';
 
 const Spinner = () => {
     return (
-        <div className={styles['lds-roller']}><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        <div className={styles.ldsRoller}>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+            <div/>
+        </div>
     )
-}
+};
 
 export default Spinner;

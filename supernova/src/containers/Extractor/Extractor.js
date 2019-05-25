@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Heading from '../../components/Heading/Heading';
-import Suggestions from '../../components/Suggestions/Suggestions';
 
 import styles from './Extractor.css';
 
@@ -28,19 +27,18 @@ class Extractor extends Component {
         const phrase = this.state.inputValue;
         if (!phrase) return;
 
-        console.log(phrase);
-        this.props.onSubmitForm(phrase)
-    }
+        this.props.onSubmitForm(phrase);
+        this.props.history.push('/suggestions');
+    };
 
     render() {
         return (
-            <div className={styles.Extractor}>
-                <Heading 
-                    onSubmitHandler={this.submitFormHandler}
-                    onChange={this.onInputChangeHandler} />
-                {/* <Suggestions 
-                    isLoading={this.props.isLoading}
-                    videos={this.props.suggestedVideos} /> */}
+            <div>
+                <div className={styles.Extractor}>
+                    <Heading
+                        onSubmitHandler={this.submitFormHandler}
+                        onChange={this.onInputChangeHandler}/>
+                </div>
             </div>
         )
     }

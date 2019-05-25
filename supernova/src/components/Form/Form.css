@@ -6,18 +6,6 @@
 .Wrapper {
     display: flex;
     justify-content: space-around;
-    
-}
-
-.Form button {
-    display: inline;
-    padding: 12px 20px;
-    background-color: #fff;
-
-    border: 1px solid black;
-    outline: none;
-    cursor: pointer;
-    font-weight: bold;
 }
 
 .Form input {

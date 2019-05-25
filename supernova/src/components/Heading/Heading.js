@@ -12,12 +12,6 @@ const Heading = (props) => {
                 onSubmit={props.onSubmitHandler}
                 btnText='Find'
             />
-            {/* <form onSubmit={props.onSubmitHandler}>
-                <input 
-                    placeholder='Type desired phrase'
-                    onChange={props.onChange}/>
-                <button>Find videos</button>
-            </form> */}
         </div>
     )
 }
