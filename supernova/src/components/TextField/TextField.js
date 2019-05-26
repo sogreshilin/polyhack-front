@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./TextField.css";
 
-const TextField = ({ placeholder, value, onChange }) =>
+const TextField = ({ placeholder, value, error, onChange }) =>
     <input
-        className={styles.textField}
+        className={error ? styles.textFieldError : styles.textField}
         value={value}
         placeholder={placeholder}
         onChange={onChange}/>;
