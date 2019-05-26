@@ -9,21 +9,21 @@ import SearchForm from "../SearchForm/SearchForm";
 
 class SearchResultsPage extends React.Component {
     itemClickHandler = (videoId) => {
-        
-    }
-    
+        this.props.history.push("/video/" + videoId);
+    };
 
     render() {
+        console.log(this.props.videos);
         const suggestions = this.props.videos.map(elem => {
                 return (
                     <SuggestionItem
-                        src={elem.src}
+                        src={elem.url}
                         key={elem.id}
                         autoplay={elem.autoplay}
                         videoId={elem.id}
                         start={elem.start}
                         description={elem.dscr}
-                        onClick={'sljksalk'}/>);
+                        onClick={() => this.itemClickHandler(elem.id)}/>);
             }
         );
 

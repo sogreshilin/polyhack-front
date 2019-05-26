@@ -9,8 +9,8 @@ const WordTime = (props) => {
     const wordTimeItems = props.wordTimeItems.map(item => (
         <WordTimeItem 
             word={item.word}
-            time={item.timecode}
-            onClick={() => props.handleWordTimeItem(item.timecode)}
+            time={item.startTime}
+            onClick={() => props.handleWordTimeItem(item.startTime)}
         />
     ));
 

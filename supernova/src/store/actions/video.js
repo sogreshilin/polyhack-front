@@ -1,4 +1,5 @@
 import * as actionTypes from './actionTypes';
+import axios from "../../utils/request";
 
 export const setVideoTime = (time) => {
     return dispatch => {
@@ -11,36 +12,23 @@ export const setVideoTime = (time) => {
 
 export const fetchVideo = (videoId) => {
     return dispatch => {
-        const video = {
-            videoId: '11111',
-            url: 'https://storage.yandexcloud.net/polyhack/polytech_microprocessors%2Fmicroprocessors-1.mp4',
-            words: [
-                {word: 'word1', timecode: 11},
-                {word: 'word2', timecode: 11},
-                {word: 'word3', timecode: 11},
-                {word: 'word4', timecode: 112},
-            ],
-        }
-
-        dispatch({
-            type: actionTypes.SET_VIDEO,
-            video,
-        });
+        axios.get(`/video/${videoId}/details`)
+            .then(response => {
+                console.log("response");
+                console.log(response.data);
+                dispatch({type: actionTypes.SET_VIDEO, video: response.data});
+            })
+            .catch(e => console.error(e));
     }
 }
 
-export const fetchWords = (phrase) => {
+export const fetchWords = (phrase, videoId) => {
     return dispatch => {
-        const words = [
-            {word: 'jdqhwowq', timecode: 452},
-            {word: 'dnqowdwqio', timecode: 11},
-            {word: 'qwdjqwdqw', timecode: 11},
-            {word: 'dqwjdqwod', timecode: 112},
-        ];
-
-        dispatch({
-            
-        })
-
+        axios.get(`/search?id=${videoId}&query=${phrase}`)
+            .then(response => {
+                console.log(` results of /search?id=${videoId}&query=${phrase}`);
+                console.log(response.data);
+                dispatch({type: actionTypes.SET_WORDS, words: response.data[0].words});
+            })
     }
 }

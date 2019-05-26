@@ -1,5 +1,5 @@
 import * as actionTypes from './actionTypes';
-import * as axios from "axios";
+import axios from "../../utils/request";
 
 function validURL(str) {
     var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
@@ -19,7 +19,10 @@ export const uploadVideoForProcessing = url => {
 
     return dispatch => {
         if (validURL(url)) {
-            dispatch({ type: actionTypes.VIDEO_UPLOADED_FOR_PROCESSING });
+            axios
+                .post("/process", { url })
+                .then(() => dispatch({ type: actionTypes.VIDEO_UPLOADED_FOR_PROCESSING }))
+                .catch(e => console.error(e));
         } else {
             dispatch({ type: actionTypes.VIDEO_URL_INCORRECT });
         }

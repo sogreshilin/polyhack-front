@@ -24,13 +24,14 @@ class VideoPage extends Component {
 
     onSubmitHandler = (event) => {
         event.preventDefault();
+        this.props.fetchWords(this.state.value, this.props.video.id);
     }
 
     componentWillMount() {
         const videoId = this.props.match.params.id;
         console.log(videoId);
 
-        this.props.fetchVideo();
+        this.props.fetchVideo(videoId);
     }
     videoRef = React.createRef();
 
@@ -41,13 +42,11 @@ class VideoPage extends Component {
     }
 
     clickWordTimeItemHandler = (time) => {
-        console.log(time)
+        console.log("time: " + time);
         this.videoRef.current.currentTime = time;
     }
 
     render() {
-        console.log(this.props);
-
         if (!this.props.video) return (
             <div>Loading...</div>
         ); 
@@ -56,7 +55,7 @@ class VideoPage extends Component {
             <div>
                 <div className={styles.FormWrapper}>
                     <Form
-                        title='Find videos related to typed phrase'
+                        title='Find phrase in current video'
                         placeholder='Enter phrase'
                         onChange={this.onInputChangeHandler}
                         onSubmit={this.onSubmitHandler}
@@ -86,7 +85,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     wordTimeItemHandler: (time) => dispatch(actions.setVideoTime(time)),
     fetchVideo: (videoId) => dispatch(actions.fetchVideo(videoId)),
-    fetchWords: (phrase) => dispatch()
+    fetchWords: (phrase, videoId) => dispatch(actions.fetchWords(phrase, videoId))
 });
 
 

@@ -18,6 +18,7 @@ const setVideo = (state, action) => {
 }
 
 const setWords = (state, action) => {
+    console.log("actionTypes.SET_WORDS");
     return updateObject(state, {
         currentVideo: updateObject (state.currentVideo, {
             words: action.words,

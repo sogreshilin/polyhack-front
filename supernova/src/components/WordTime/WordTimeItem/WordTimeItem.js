@@ -8,7 +8,7 @@ const WordTimeItem = (props) => {
             className={styles.WordTimeItem}
             onClick={props.onClick}>
             <span>{props.word}</span>
-            <span className={styles.Time}>{props.time}</span>
+            <span className={styles.Time}>{Math.round(parseFloat(props.time))}c</span>
         </button>
     )
 }

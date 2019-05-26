@@ -2,33 +2,7 @@ import * as actionTypes from '../actions/actionTypes';
 import { updateObject } from '../utils';
 
 const initialState = {
-    suggestedVideos: [
-        {
-            id: 'uD4izuDMUQA',
-            start: 40,
-            autoplay: false,
-            dscr: 'Supernova',
-            src: "https://storage.yandexcloud.net/polyhack/polytech_microprocessors%2Fmicroprocessors-1.mp4",
-        },{
-            id: 'TqGOl31yB4I',
-            start: 40,
-            autoplay: false,
-            dscr: 'Supernova',
-            src: "https://storage.yandexcloud.net/polyhack/polytech_microprocessors%2Fmicroprocessors-1.mp4",
-        },{
-            id: 'L4qM1IEhtNQ',
-            start: 40,
-            autoplay: false,
-            dscr: 'Supernova',
-            src: "https://storage.yandexcloud.net/polyhack/polytech_microprocessors%2Fmicroprocessors-1.mp4",
-        },{
-            id: 'rs9w5bgtJC8',
-            start: 40,
-            autoplay: false,
-            dscr: 'Supernova',
-            src: "https://storage.yandexcloud.net/polyhack/polytech_microprocessors%2Fmicroprocessors-1.mp4",
-        }
-    ],
+    suggestedVideos: [],
     query: '',
     isLoading: false,
     isError: false,
@@ -37,6 +11,7 @@ const initialState = {
 const suggestVideoSuccess = (state, action) => {
     return updateObject(state, {
         isLoading: false,
+        suggestedVideos: action.videos
     });
 };
 
