@@ -1,7 +1,5 @@
 import * as actionTypes from './actionTypes';
 
-import request from '../../utils/request';
-
 const initSuggestVideos = (phrase) => ({
     type: actionTypes.INIT_SUGGEST_VIDEOS,
     phrase
@@ -16,4 +14,8 @@ export const findSuggestions = (phrase) => {
         dispatch(initSuggestVideos(phrase));
         setTimeout(() => dispatch(suggestVideoSuccess()), 2000);
     }
+};
+
+export const updateSearchQuery = query => {
+    return dispatch => dispatch({ type: actionTypes.SEARCH_QUERY_UPDATED, query: query });
 };

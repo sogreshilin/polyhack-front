@@ -6,8 +6,9 @@
     align-items: center;
 }
 
-.Wrapper {
-    /* box-sizing: border-box; */
-    width: 100%;
-    text-align: center;
+.Message {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 11px;
 }
