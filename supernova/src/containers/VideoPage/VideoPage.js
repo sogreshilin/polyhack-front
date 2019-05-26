@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import WordTime from '../../components/WordTime/WordTime';
+import Form from '../../components/Form/Form';
 import * as actions from '../../store/actions/index';
 
 import styles from './VideoPage.css';
@@ -23,7 +24,15 @@ class VideoPage extends Component {
     render() {
         return (
             <div>
-                <h2>Search form</h2>
+                <div className={styles.FormWrapper}>
+                    <Form
+                        title='Find videos related to typed phrase'
+                        placeholder='Enter phrase'
+                        onChange={this.onInputChangeHandler}
+                        onSubmit={this.onSubmitFormHandler}
+                        btnText='Find'
+                    />
+                </div>
                 <div className={styles.VideoWrapper}>
                     <VidePlayer 
                         src={this.props.video.src}
