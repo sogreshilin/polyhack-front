@@ -8,3 +8,7 @@ export const VIDEO_URL_INCORRECT = 'VIDEO_URL_INCORRECT';
 export const SET_VIDEO_TIME = 'SET_VIDEO_TIME';
 export const FETCH_VIDEO = 'FETCH_VIDEO';
 export const SET_VIDEO = 'SET_VIDEO';
+
+export const FETCH_WORDS = 'FETCH_WORDS';
+export const SET_WORDS = 'SET_WORDS';
+

@@ -28,3 +28,19 @@ export const fetchVideo = (videoId) => {
         });
     }
 }
+
+export const fetchWords = (phrase) => {
+    return dispatch => {
+        const words = [
+            {word: 'jdqhwowq', timecode: 452},
+            {word: 'dnqowdwqio', timecode: 11},
+            {word: 'qwdjqwdqw', timecode: 11},
+            {word: 'dqwjdqwod', timecode: 112},
+        ];
+
+        dispatch({
+            
+        })
+
+    }
+}

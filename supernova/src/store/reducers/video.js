@@ -17,6 +17,14 @@ const setVideo = (state, action) => {
     });
 }
 
+const setWords = (state, action) => {
+    return updateObject(state, {
+        currentVideo: updateObject (state.currentVideo, {
+            words: action.words,
+        })
+    })
+}
+
 export default (state = initialState, action) => {
     switch (action.type) {
 
@@ -24,6 +32,8 @@ export default (state = initialState, action) => {
             return setVideoTime(state, action);
         case (actionTypes.SET_VIDEO):
             return setVideo(state, action);
+        case (actionTypes.SET_WORDS):
+            return setWords(state, action);
         default: return state;
     }
 

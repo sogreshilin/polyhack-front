@@ -10,13 +10,28 @@ import styles from './VideoPage.css';
 import VidePlayer from '../../components/utils/VidePlayer/VideoPlayer';
 
 class VideoPage extends Component {
+    state = {
+        value: '',
+    }
+
+    onInputChangeHandler = (event) => {
+        const value = event.target.value;
+
+        this.setState({
+            value,
+        })
+    }
+
+    onSubmitHandler = (event) => {
+        event.preventDefault();
+    }
+
     componentWillMount() {
         const videoId = this.props.match.params.id;
         console.log(videoId);
 
         this.props.fetchVideo();
     }
-
     videoRef = React.createRef();
 
     componentDidMount() {
@@ -44,7 +59,7 @@ class VideoPage extends Component {
                         title='Find videos related to typed phrase'
                         placeholder='Enter phrase'
                         onChange={this.onInputChangeHandler}
-                        onSubmit={this.onSubmitFormHandler}
+                        onSubmit={this.onSubmitHandler}
                         btnText='Find'
                     />
                 </div>
@@ -71,6 +86,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
     wordTimeItemHandler: (time) => dispatch(actions.setVideoTime(time)),
     fetchVideo: (videoId) => dispatch(actions.fetchVideo(videoId)),
+    fetchWords: (phrase) => dispatch()
 });
 
 
