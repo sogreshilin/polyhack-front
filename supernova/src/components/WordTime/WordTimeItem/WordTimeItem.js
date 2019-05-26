@@ -3,7 +3,6 @@ import React from 'react';
 import styles from './WordTimeItem.css';
 
 const WordTimeItem = (props) => {
-    console.log(props, '<---TIME ITEM');
     return (
         <button 
             className={styles.WordTimeItem}

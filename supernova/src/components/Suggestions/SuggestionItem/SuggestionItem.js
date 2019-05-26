@@ -8,6 +8,7 @@ const SuggestionItem = (props) => {
         <li className={styles.SuggestionItem}>
             <div className={styles.VideoPlayer}>
                 <VideoPlayer 
+                    src={props.src}
                     isAutoplay={props.autoplay}
                     videoId={props.videoId}
                     start={props.start}

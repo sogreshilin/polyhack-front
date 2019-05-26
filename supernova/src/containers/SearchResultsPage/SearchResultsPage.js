@@ -12,6 +12,7 @@ class SearchResultsPage extends React.Component {
         const suggestions = this.props.videos.map(elem => {
                 return (
                     <SuggestionItem
+                        src={elem.src}
                         key={elem.id}
                         autoplay={elem.autoplay}
                         videoId={elem.id}
