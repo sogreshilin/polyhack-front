@@ -1,0 +1,6 @@
+.VideoWrapper {
+    display: block;
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
