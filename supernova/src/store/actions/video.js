@@ -8,3 +8,23 @@ export const setVideoTime = (time) => {
         });
     }
 }
+
+export const fetchVideo = (videoId) => {
+    return dispatch => {
+        const video = {
+            videoId: '11111',
+            url: 'https://storage.yandexcloud.net/polyhack/polytech_microprocessors%2Fmicroprocessors-1.mp4',
+            words: [
+                {word: 'word1', timecode: 11},
+                {word: 'word2', timecode: 11},
+                {word: 'word3', timecode: 11},
+                {word: 'word4', timecode: 112},
+            ],
+        }
+
+        dispatch({
+            type: actionTypes.SET_VIDEO,
+            video,
+        });
+    }
+}

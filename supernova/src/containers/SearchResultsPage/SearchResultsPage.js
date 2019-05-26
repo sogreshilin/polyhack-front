@@ -8,6 +8,11 @@ import Form from "../../components/Form/Form";
 import SearchForm from "../SearchForm/SearchForm";
 
 class SearchResultsPage extends React.Component {
+    itemClickHandler = (videoId) => {
+        
+    }
+    
+
     render() {
         const suggestions = this.props.videos.map(elem => {
                 return (
@@ -17,7 +22,8 @@ class SearchResultsPage extends React.Component {
                         autoplay={elem.autoplay}
                         videoId={elem.id}
                         start={elem.start}
-                        description={elem.dscr}/>);
+                        description={elem.dscr}
+                        onClick={'sljksalk'}/>);
             }
         );
 

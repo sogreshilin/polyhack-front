@@ -15,7 +15,7 @@ const SuggestionItem = (props) => {
                 />
             </div>
             <div className={styles.Description}>
-                {props.description}
+                <button onClick={props.onClick}>Find more</button>
             </div>
         </li>
     )

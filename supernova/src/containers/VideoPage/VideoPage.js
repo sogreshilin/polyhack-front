@@ -10,18 +10,33 @@ import styles from './VideoPage.css';
 import VidePlayer from '../../components/utils/VidePlayer/VideoPlayer';
 
 class VideoPage extends Component {
+    componentWillMount() {
+        const videoId = this.props.match.params.id;
+        console.log(videoId);
+
+        this.props.fetchVideo();
+    }
+
     videoRef = React.createRef();
 
     componentDidMount() {
+        if (!this.props.video) return; 
         this.videoRef.current.currentTime = this.props.video.start;
         this.videoRef.current.autoplay = this.props.video.autoplay;
     }
 
     clickWordTimeItemHandler = (time) => {
+        console.log(time)
         this.videoRef.current.currentTime = time;
     }
 
     render() {
+        console.log(this.props);
+
+        if (!this.props.video) return (
+            <div>Loading...</div>
+        ); 
+
         return (
             <div>
                 <div className={styles.FormWrapper}>
@@ -35,14 +50,14 @@ class VideoPage extends Component {
                 </div>
                 <div className={styles.VideoWrapper}>
                     <VidePlayer 
-                        src={this.props.video.src}
+                        src={this.props.video.url}
                         videoRef={this.videoRef}
                         videoId={this.props.video.id}
-                        start={this.props.video.start}
+                        start={50}
                         isAutoplay={this.props.video.autoplay}/>
                 </div>
                 <WordTime 
-                    wordTimeItems={this.props.items}
+                    wordTimeItems={this.props.video.words}
                     handleWordTimeItem={this.clickWordTimeItemHandler}/>
             </div>
         )
@@ -50,12 +65,12 @@ class VideoPage extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    items: state.video.currentVideo.wordTimeItems,
     video: state.video.currentVideo,
 });
 
 const mapDispatchToProps = (dispatch) => ({
     wordTimeItemHandler: (time) => dispatch(actions.setVideoTime(time)),
+    fetchVideo: (videoId) => dispatch(actions.fetchVideo(videoId)),
 });
 
 
