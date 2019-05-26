@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import VideoPlayer from '../../utils/VidePlayer/VideoPlayer';
 import styles from './SuggestionItem.css';
+import Button from "../../Button/Button";
 
 const SuggestionItem = (props) => {    
     return (
@@ -15,7 +16,7 @@ const SuggestionItem = (props) => {
                 />
             </div>
             <div className={styles.Description}>
-                <button onClick={props.onClick}>Find more</button>
+                <Button text={"Find more"} onClick={props.onClick}/>
             </div>
         </li>
     )
