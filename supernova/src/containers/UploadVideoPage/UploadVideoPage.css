@@ -1,0 +1,14 @@
+.Upload {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Message {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 11px;
+}
