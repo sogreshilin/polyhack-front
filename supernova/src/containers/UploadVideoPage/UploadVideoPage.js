@@ -23,17 +23,17 @@ class UploadVideoPage extends Component {
                 <div>
                     <Form
                         error={this.props.isError}
-                        title='Upload Your Video file'
-                        placeholder='Add link to your video file'
+                        title='Загрузите новое видео в индексатор'
+                        placeholder='Введите URL видео'
                         value={this.props.videoUrl}
                         onChange={this.onInputChangeHandler}
                         onSubmit={this.onSubmitFormHandler}
-                        btnText='Upload'/>
+                        btnText='Загрузить'/>
                     {
-                        this.props.isError && <div className={styles.Message}>Invalid url specified</div>
+                        this.props.isError && <div className={styles.Message}>Указан неправильный URL</div>
                     }
                     {
-                        this.props.isOk && <div className={styles.Message}>Processing video started</div>
+                        this.props.isOk && <div className={styles.Message}>Индексация видео началась</div>
                     }
                 </div>
             </div>

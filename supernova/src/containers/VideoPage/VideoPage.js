@@ -55,11 +55,11 @@ class VideoPage extends Component {
             <div>
                 <div className={styles.FormWrapper}>
                     <Form
-                        title='Find phrase in current video'
-                        placeholder='Enter phrase'
+                        title='Поиск по словам в текущем видео'
+                        placeholder='Введите поисковой запрос'
                         onChange={this.onInputChangeHandler}
                         onSubmit={this.onSubmitHandler}
-                        btnText='Find'
+                        btnText='Найти'
                     />
                 </div>
                 <div className={styles.VideoWrapper}>

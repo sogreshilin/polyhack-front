@@ -21,6 +21,7 @@ class SearchResultsPage extends React.Component {
                         key={elem.id}
                         autoplay={elem.autoplay}
                         videoId={elem.id}
+                        words={elem.words}
                         start={elem.start}
                         description={elem.dscr}
                         onClick={() => this.itemClickHandler(elem.id)}/>);
@@ -35,9 +36,9 @@ class SearchResultsPage extends React.Component {
                         ? <div className={styles.spinnerWrapper}>
                             <Spinner/>
                         </div>
-                        : <ul>
+                        : <div className={styles.suggestionsContainer}>
                             {suggestions}
-                        </ul>
+                        </div>
                 }
             </div>
         );

@@ -27,12 +27,12 @@ class SearchForm extends React.Component {
         return (
             <div className={styles.formWrapper}>
                 <Form
-                    title='Find videos related to typed phrase'
-                    placeholder='Enter phrase'
+                    title='Поиск по текстам видеолекций'
+                    placeholder='Введите поисковой запрос'
                     value={this.props.query}
                     onChange={this.onInputChangeHandler}
                     onSubmit={this.submitFormHandler}
-                    btnText='Find'
+                    btnText='Найти'
                 />
             </div>
         );

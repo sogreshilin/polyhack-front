@@ -4,9 +4,10 @@ import VideoPlayer from '../../utils/VidePlayer/VideoPlayer';
 import styles from './SuggestionItem.css';
 import Button from "../../Button/Button";
 
-const SuggestionItem = (props) => {    
+const SuggestionItem = (props) => {
+    console.log(props.words);
     return (
-        <li className={styles.SuggestionItem}>
+        <div className={styles.SuggestionItem}>
             <div className={styles.VideoPlayer}>
                 <VideoPlayer 
                     src={props.src}
@@ -16,9 +17,10 @@ const SuggestionItem = (props) => {
                 />
             </div>
             <div className={styles.Description}>
-                <Button text={"Find more"} onClick={props.onClick}/>
+
+                <Button text={"Подробнее"} onClick={props.onClick}/>
             </div>
-        </li>
+        </div>
     )
 }
 
